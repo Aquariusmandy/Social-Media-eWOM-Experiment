@@ -7703,7 +7703,7 @@ fieldset:disabled .btn {
   justify-content: flex-start !important;
 }
 
-.justify-content-end {
+justify-content-end. {
   justify-content: flex-end !important;
 }
 
@@ -8241,7 +8241,7 @@ fieldset:disabled .btn {
   font-family: var(--bs-font-monospace) !important;
 }
 .fs-0 {
-  font-size: calc(2rem + 1.7vw) !important;
+  font-size: calc(2.2rem + 1.8vw) !important;
 }
 
 .fs-1 {
@@ -8266,6 +8266,10 @@ fieldset:disabled .btn {
 
 .fs-6 {
   font-size: 1rem !important;
+}
+
+.fs-7 {
+  font-size: 0.75rem !important;
 }
 
 .fst-italic {
