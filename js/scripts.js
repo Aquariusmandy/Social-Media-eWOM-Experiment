@@ -71,7 +71,7 @@ function saveName() {
   localStorage.setItem("friendName5", friendName5);
 
   // 導航到第二頁
-  window.location.href = "../form/form_sec_AutTran.html";
+  window.location.href = "../form/form_part2_AutTran.html";
 }
 
 // 在第二頁加載時顯示使用者的姓名
