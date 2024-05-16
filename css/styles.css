@@ -372,6 +372,11 @@ th {
   border-width: 0;
 }
 
+/* 自己加的 */
+/* th,td{
+  width: calc((100% - 120px) / 7);
+} */
+
 label {
   display: inline-block;
 }
@@ -7999,6 +8004,10 @@ justify-content-end. {
 
 .mb-5 {
   margin-bottom: 3rem !important;
+}
+
+.mb-6 {
+  margin-bottom: 6rem !important;
 }
 
 .mb-auto {
