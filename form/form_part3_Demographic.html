@@ -49,135 +49,268 @@
           class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center"
         >
           <div class="col-lg-8 align-self-baseline text-start">
-            <form id="friendForm" data-sb-form-api-token="API_TOKEN">
-              <!-- Name1 input-->
-              <div class="mb-3">
-                <label for="friendname-1"
-                  >第一位好友（例：李Ｏ涵、**ndy *i）</label
-                ><br />
-                <input
-                  class="form-control"
-                  id="friendname-1"
-                  type="text"
-                  placeholder="請輸入好友姓名"
-                  data-sb-validations="required"
-                />
-                <div class="invalid-feedback" data-sb-feedback="name:required">
-                  A name is required.
-                </div>
-              </div>
-              <!-- Name2 input-->
-              <div class="mb-3">
-                <label for="friendname-2"
-                  >第二位好友（例：李Ｏ涵、**ndy *i）</label
-                ><br />
-                <input
-                  class="form-control"
-                  id="friendname-2"
-                  type="text"
-                  placeholder="請輸入好友姓名"
-                  data-sb-validations="required"
-                />
-                <div class="invalid-feedback" data-sb-feedback="name:required">
-                  A name is required.
-                </div>
-              </div>
-              <!-- Name3 input-->
-              <div class="mb-3">
-                <label for="friendname-3"
-                  >第三位好友（例：李Ｏ涵、**ndy *i）</label
-                ><br />
-                <input
-                  class="form-control"
-                  id="friendname-3"
-                  type="text"
-                  placeholder="請輸入好友姓名"
-                  data-sb-validations="required"
-                />
-                <div class="invalid-feedback" data-sb-feedback="name:required">
-                  A name is required.
-                </div>
-              </div>
-              <!-- Name4 input-->
-              <div class="mb-3">
-                <label for="friendname-4"
-                  >第四位好友（例：李Ｏ涵、**ndy *i）</label
-                ><br />
-                <input
-                  class="form-control"
-                  id="friendname-4"
-                  type="text"
-                  placeholder="請輸入好友姓名"
-                  data-sb-validations="required"
-                />
-                <div class="invalid-feedback" data-sb-feedback="name:required">
-                  A name is required.
-                </div>
-              </div>
-              <!-- Name5 input-->
+            <form id="DemographicForm" data-sb-form-api-token="API_TOKEN">
+              <!-- Gender input-->
               <div class="mb-5">
-                <label for="friendname-5"
-                  >第五位好友（例：李Ｏ涵、**ndy *i）</label
-                ><br />
-                <input
-                  class="form-control"
-                  id="friendname-5"
-                  type="text"
-                  placeholder="請輸入好友姓名"
-                  data-sb-validations="required"
-                />
+                <h5><label for="gender"
+                  >請問您的生理性別是？</label
+                ></h5><br />
+                <input class="form-text" id="gender" type="radio" value="0"/>&nbsp;生理女&emsp;
+                <input class="form-text" id="gender" type="radio" value="1"/>&nbsp;生理男&emsp;
+                <input class="form-text" id="gender" type="radio" value="2"/>&nbsp;其他&emsp;
                 <div class="invalid-feedback" data-sb-feedback="name:required">
-                  A name is required.
+                  必填
                 </div>
               </div>
+              <!-- Age input-->
               <div class="mb-5">
-                <h5>請問您認為您與這五位好友的親近程度為何？</h5>
-                <p>1分-非常不熟 7分-非常熟識</p>
-                <label class="mb-2" for="STS-1">第一位</label>
-                <input type="radio" name="STS-1" value="1" /> 非常不熟
-                <input type="radio" name="STS-1" value="2" /> 很不熟
-                <input type="radio" name="STS-1" value="3" /> 不熟
-                <input type="radio" name="STS-1" value="4" /> 普通
-                <input type="radio" name="STS-1" value="5" /> 熟識
-                <input type="radio" name="STS-1" value="6" /> 很熟識
-                <input type="radio" name="STS-1" value="7" /> 非常熟識<br />
-                <label class="mb-2" for="STS-2">第二位</label>
-                <input type="radio" name="STS-2" value="1" /> 非常不熟
-                <input type="radio" name="STS-2" value="2" /> 很不熟
-                <input type="radio" name="STS-2" value="3" /> 不熟
-                <input type="radio" name="STS-2" value="4" /> 普通
-                <input type="radio" name="STS-2" value="5" /> 熟識
-                <input type="radio" name="STS-2" value="6" /> 很熟識
-                <input type="radio" name="STS-2" value="7" /> 非常熟識<br/>
-                <label class="mb-2" for="STS-3">第三位</label>
-                <input type="radio" name="STS-3" value="1" /> 非常不熟
-                <input type="radio" name="STS-3" value="2" /> 很不熟
-                <input type="radio" name="STS-3" value="3" /> 不熟
-                <input type="radio" name="STS-3" value="4" /> 普通
-                <input type="radio" name="STS-3" value="5" /> 熟識
-                <input type="radio" name="STS-3" value="6" /> 很熟識
-                <input type="radio" name="STS-3" value="7" /> 非常熟識<br/>
-                <label class="mb-2" for="STS-4">第四位</label>
-                <input type="radio" name="STS-4" value="1" /> 非常不熟
-                <input type="radio" name="STS-4" value="2" /> 很不熟
-                <input type="radio" name="STS-4" value="3" /> 不熟
-                <input type="radio" name="STS-4" value="4" /> 普通
-                <input type="radio" name="STS-4" value="5" /> 熟識
-                <input type="radio" name="STS-4" value="6" /> 很熟識
-                <input type="radio" name="STS-4" value="7" /> 非常熟識<br/>
-                <label class="mb-2" for="STS-5">第五位</label>
-                <input type="radio" name="STS-5" value="1" /> 非常不熟
-                <input type="radio" name="STS-5" value="2" /> 很不熟
-                <input type="radio" name="STS-5" value="3" /> 不熟
-                <input type="radio" name="STS-5" value="4" /> 普通
-                <input type="radio" name="STS-5" value="5" /> 熟識
-                <input type="radio" name="STS-5" value="6" /> 很熟識
-                <input type="radio" name="STS-5" value="7" /> 非常熟識<br/>
-
+                <h5><label for="age"
+                  >請問您的年齡是？</label
+                ></h5><br />
+                <input class="form-text" id="age" type="radio" value="0"/>&nbsp;15歲及以下&emsp;
+                <input class="form-text" id="age" type="radio" value="1"/>&nbsp;16到25歲&emsp;
+                <input class="form-text" id="age" type="radio" value="2"/>&nbsp;26到35歲&emsp;
+                <input class="form-text" id="age" type="radio" value="3"/>&nbsp;36到45歲&emsp;
+                <input class="form-text" id="age" type="radio" value="4"/>&nbsp;46到55歲&emsp;
+                <input class="form-text" id="age" type="radio" value="5"/>&nbsp;56到65歲&emsp;
+                <input class="form-text" id="age" type="radio" value="6"/>&nbsp;66歲及以上&emsp;
+                <div class="invalid-feedback" data-sb-feedback="name:required">
+                  必填
+                </div>
               </div>
+              <!-- Education input-->
+              <div class="mb-5">
+                <h5><label for="education"
+                  >請問您的教育程度為？</label
+                ></h5><br />
+                <input class="form-text" id="education" type="radio" value="0"/>&nbsp;自修&emsp;
+                <input class="form-text" id="education" type="radio" value="1"/>&nbsp;小學&emsp;
+                <input class="form-text" id="education" type="radio" value="2"/>&nbsp;國中或初中&emsp;
+                <input class="form-text" id="education" type="radio" value="3"/>&nbsp;高中職（含五專前三年）&emsp;
+                <input class="form-text" id="education" type="radio" value="4"/>&nbsp;專科&emsp;
+                <input class="form-text" id="education" type="radio" value="5"/>&nbsp;大學&emsp;
+                <input class="form-text" id="education" type="radio" value="6"/>&nbsp;碩士及以上&emsp;
+                <input class="form-text" id="education" type="radio" value="7"/>&nbsp;不知道&emsp;
+                <div class="invalid-feedback" data-sb-feedback="name:required">
+                  必填
+                </div>
+              </div>
+              <!-- Job input-->
+              <div class="mb-5">
+                <h5><label for="job"
+                  >請問您的職業是？</label
+                ></h5>
+                <br />
+                <input class="form-text" id="job" type="radio" value="0"/>&nbsp;農、林、漁、牧業&emsp;
+                <input class="form-text" id="job" type="radio" value="1"/>&nbsp;礦業及土石採取業&emsp;
+                <input class="form-text" id="job" type="radio" value="2"/>&nbsp;製造業&emsp;
+                <input class="form-text mb-2" id="job" type="radio" value="3"/>&nbsp;電力及燃氣供應業&emsp;<br>
+                <input class="form-text" id="job" type="radio" value="4"/>&nbsp;用水供應及污染整治業&emsp;
+                <input class="form-text" id="job" type="radio" value="5"/>&nbsp;營建工程業&emsp;
+                <input class="form-text" id="job" type="radio" value="6"/>&nbsp;批發及零售業&emsp;
+                <input class="form-text mb-2" id="job" type="radio" value="7"/>&nbsp;運輸及倉儲業&emsp;<br>
+                <input class="form-text" id="job" type="radio" value="8"/>&nbsp;住宿及餐飲業&emsp;
+                <input class="form-text" id="job" type="radio" value="9"/>&nbsp;出版、影音製作、傳播及資通訊服務&emsp;
+                <input class="form-text" id="job" type="radio" value="10"/>&nbsp;金融及保險業&emsp;
+                <input class="form-text mb-2" id="job" type="radio" value="11"/>&nbsp;不動產業&emsp;<br>
+                <input class="form-text" id="job" type="radio" value="12"/>&nbsp;專業、科學及技術服務業&emsp;
+                <input class="form-text" id="job" type="radio" value="13"/>&nbsp;支援服務業&emsp;
+                <input class="form-text" id="job" type="radio" value="14"/>&nbsp;教育業&emsp;
+                <input class="form-text mb-2" id="job" type="radio" value="15"/>&nbsp;公共行政及國防/強制性社會安全&emsp;<br>
+                <input class="form-text" id="job" type="radio" value="16"/>&nbsp;醫療保健及社會工作服務業&emsp;
+                <input class="form-text" id="job" type="radio" value="17"/>&nbsp;藝術、娛樂及休閒服務業&emsp;
+                <input class="form-text" id="job" type="radio" value="18"/>&nbsp;其他服務業&emsp;
+                <input class="form-text mb-2" id="job" type="radio" value="19"/>&nbsp;家管&emsp;<br>
+                <input class="form-text" id="job" type="radio" value="20"/>&nbsp;學生&emsp;
+                <input class="form-text" id="job" type="radio" value="21"/>&nbsp;退休&emsp;
+                <input class="form-text" id="job" type="radio" value="22"/>&nbsp;在尋找工作或等待恢復工作者&emsp;
+                <input class="form-text " id="job" type="radio" value="23"/>&nbsp;不知道&emsp;
+                <input class="form-text mb-2" id="job" type="radio" value="24"/>&nbsp;其他&emsp;
+                <div class="invalid-feedback" data-sb-feedback="name:required">
+                  必填
+                </div>
+              </div>
+              <!-- Location input-->
+              <div class="mb-5">
+                <h5><label class="fs-5 mb-2" for="location"
+                  >請問您的居住地為？</label
+                ></h5><br />
+                <table class="mb-4">
+                  <tr>
+                      <th style="width: 20%; text-align: center;"></th>
+                      <th style="width: 20%; text-align: center;"></th>
+                      <th style="width: 20%; text-align: center;"></th>
+                      <th style="width: 20%; text-align: center;"></th>
+                      <th style="width: 20%; text-align: center;"></th>
+                  </tr>
+                  <tr>
+                      <td style=" text-align: center;"><input type="radio" name="location" value="0">&nbsp;新北市&emsp;</td>
+                      <td style=" text-align: center;"><input type="radio" name="location" value="1">&nbsp;臺北市&emsp;</td>
+                      <td style=" text-align: center;"><input type="radio" name="location" value="2">&nbsp;桃園市&emsp;</td>
+                      <td style=" text-align: center;"><input type="radio" name="location" value="3">&nbsp;臺中市&emsp;</td>
+                      <td style=" text-align: center;"><input type="radio" name="location" value="4">&nbsp;臺南市&emsp;</td>
+                  </tr>
+                  <tr>
+                      <td style=" text-align: center;"><input type="radio" name="location" value="5">&nbsp;高雄市&emsp;</td>
+                      <td style=" text-align: center;"><input type="radio" name="location" value="6">&nbsp;宜蘭縣&emsp;</td>
+                      <td style=" text-align: center;"><input type="radio" name="location" value="7">&nbsp;新竹縣&emsp;</td>
+                      <td style=" text-align: center;"><input type="radio" name="location" value="8">&nbsp;苗栗縣&emsp;</td>
+                      <td style=" text-align: center;"><input type="radio" name="location" value="9">&nbsp;彰化縣&emsp;</td>
+                  </tr>
+                  <tr>
+                      <td style=" text-align: center;"><input type="radio" name="location" value="10">&nbsp;南投縣&emsp;</td>
+                      <td style=" text-align: center;"><input type="radio" name="location" value="11">&nbsp;雲林縣&emsp;</td>
+                      <td style=" text-align: center;"><input type="radio" name="location" value="12">&nbsp;嘉義縣&emsp;</td>
+                      <td style=" text-align: center;"><input type="radio" name="location" value="13">&nbsp;屏東縣&emsp;</td>
+                      <td style=" text-align: center;"><input type="radio" name="location" value="14">&nbsp;臺東縣&emsp;</td>
+                  </tr>
+                  <tr>
+                      <td style=" text-align: center;"><input type="radio" name="location" value="15">&nbsp;花蓮縣&emsp;</td>
+                      <td style=" text-align: center;"><input type="radio" name="location" value="16">&nbsp;澎湖縣&emsp;</td>
+                      <td style=" text-align: center;"><input type="radio" name="location" value="17">&nbsp;基隆市&emsp;</td>
+                      <td style=" text-align: center;"><input type="radio" name="location" value="18">&nbsp;新竹市&emsp;</td>
+                      <td style=" text-align: center;"><input type="radio" name="location" value="19">&nbsp;嘉義市&emsp;</td>
+                  </tr>
+                </table>
+                <div class="invalid-feedback" data-sb-feedback="name:required">
+                  必填
+                </div>
+              </div>
+              <!-- DG-1 Confidence of identify ads input-->
+              <div class="mb-5">
+                <h5><label for="DG-1"
+                  >閱讀網路資訊時，您對於判斷是否為廣告之自信程度？（1-非常沒有自信；10-非常有自信）</label
+                ></h5><br />
+                <input class="form-text" id="DG-1" type="radio" value="1"/>&nbsp;1&emsp;
+                <input class="form-text" id="DG-1" type="radio" value="2"/>&nbsp;2&emsp;
+                <input class="form-text" id="DG-1" type="radio" value="3"/>&nbsp;3&emsp;
+                <input class="form-text" id="DG-1" type="radio" value="4"/>&nbsp;4&emsp;
+                <input class="form-text" id="DG-1" type="radio" value="5"/>&nbsp;5&emsp;
+                <input class="form-text" id="DG-1" type="radio" value="6"/>&nbsp;6&emsp;
+                <input class="form-text" id="DG-1" type="radio" value="7"/>&nbsp;7&emsp;
+                <input class="form-text" id="DG-1" type="radio" value="8"/>&nbsp;8&emsp;
+                <input class="form-text" id="DG-1" type="radio" value="9"/>&nbsp;9&emsp;
+                <input class="form-text" id="DG-1" type="radio" value="10"/>&nbsp;10&emsp;
+                <div class="invalid-feedback" data-sb-feedback="name:required">
+                  必填
+                </div>
+              </div>
+              <!-- DG-2 input-->
+              <div class="mb-5">
+                <h5><label for="DG-2"
+                  >您曾使用網路來從事哪些查詢活動？（複選）</label
+                ></h5><br />
+                <input class="form-text" id="DG-2" type="checkbox" value="0"/>&nbsp;瀏覽網頁&emsp;
+                <input class="form-text" id="DG-2" type="checkbox" value="1"/>&nbsp;線上查詢商品或服務資訊&emsp;
+                <input class="form-text" id="DG-2" type="checkbox" value="2"/>&nbsp;取得新聞資訊&emsp;
+                <input class="form-text" id="DG-2" type="checkbox" value="3"/>&nbsp;尋找或下載與工作/學業相關的資訊&emsp;
+                <input class="form-text" id="DG-2" type="checkbox" value="4"/>&nbsp;搜尋與健康相關的資訊&emsp;
+                <input class="form-text" id="DG-2" type="checkbox" value="5"/>&nbsp;查詢政府相關資訊&emsp;
+                <input class="form-text" id="DG-2" type="checkbox" value="6"/>&nbsp;查詢維基百科或其他網站資訊&emsp;
+                <input class="form-text" id="DG-2" type="checkbox" value="7"/>&nbsp;都沒有從事此類活動&emsp;
+                <input class="form-text" id="DG-2" type="checkbox" value="8"/>&nbsp;不知道&emsp;
+                <div class="invalid-feedback" data-sb-feedback="name:required">
+                  必填
+                </div>
+              </div>
+              <!-- DG-3 input-->
+              <div class="mb-5">
+              <h5><label for="DG-3"
+                >您曾使用網路來從事哪些社交或溝通活動？（複選）</label
+              ></h5><br />
+              <input class="form-text" id="DG-3" type="checkbox" value="0"/>&nbsp;傳送或接收電子郵件&emsp;
+              <input class="form-text" id="DG-3" type="checkbox" value="1"/>&nbsp;使用社群媒體（如Facebook、Line、Instagram等）瀏覽/閱讀/留言/按讚/發文
+              &emsp;
+              <input class="form-text" id="DG-3" type="checkbox" value="2"/>&nbsp;收看網路直播&emsp;
+              <input class="form-text" id="DG-3" type="checkbox" value="3"/>&nbsp;開網路直播&emsp;
+              <input class="form-text" id="DG-3" type="checkbox" value="4"/>&nbsp;經營個人網頁部落格&emsp;
+              <input class="form-text" id="DG-3" type="checkbox" value="5"/>&nbsp;使用或瀏覽網路相簿&emsp;
+              <input class="form-text" id="DG-3" type="checkbox" value="6"/>&nbsp;使用或瀏覽論壇、留言板&emsp;
+              <input class="form-text" id="DG-3" type="checkbox" value="7"/>&nbsp;在別人的部落格上留言&emsp;
+              <input class="form-text" id="DG-3" type="checkbox" value="8"/>&nbsp;在網站上發表與公共事務或政治相關議題意見&emsp;
+              <input class="form-text" id="DG-3" type="checkbox" value="9"/>&nbsp;透過即時通訊進行溝通（如Facebook Messenger、LINE、Skype、WhatsApp、WeChat、Telegram等）&emsp;
+              <input class="form-text" id="DG-3" type="checkbox" value="10"/>&nbsp;撥打視訊電話（如Facebook Messenger、LINE、Skype、FaceTime等）&emsp;
+              <input class="form-text" id="DG-3" type="checkbox" value="11"/>&nbsp;撥打語音網路電話（如Facebook Messenger、LINE、Skype、FaceTime、Telegram等）&emsp;
+              <input class="form-text" id="DG-3" type="checkbox" value="12"/>&nbsp;進行視訊會議&emsp;
+              <input class="form-text" id="DG-3" type="checkbox" value="13"/>&nbsp;都沒有從事此類活動&emsp;
+              <div class="invalid-feedback" data-sb-feedback="name:required">
+                必填
+              </div>
+            </div>
+            <!-- DG-4 Confidence of identify ads input-->
+            <div class="mb-5">
+              <h5><label for="DG-4"
+                >請問您最常使用的社群媒體或即時通訊軟體是哪一個？</label
+              ></h5><br />
+              <input class="form-text" id="DG-4" type="radio" value="0"/>&nbsp;Facebook&emsp;
+              <input class="form-text" id="DG-4" type="radio" value="1"/>&nbsp;Facebook Messenger&emsp;
+              <input class="form-text" id="DG-4" type="radio" value="2"/>&nbsp;LINE&emsp;
+              <input class="form-text" id="DG-4" type="radio" value="3"/>&nbsp;Instagram&emsp;
+              <input class="form-text" id="DG-4" type="radio" value="4"/>&nbsp;YouTube&emsp;
+              <input class="form-text" id="DG-4" type="radio" value="5"/>&nbsp;Twitter&emsp;
+              <input class="form-text" id="DG-4" type="radio" value="6"/>&nbsp;SnapChat&emsp;
+              <input class="form-text" id="DG-4" type="radio" value="7"/>&nbsp;LinkedIn&emsp;
+              <input class="form-text" id="DG-4" type="radio" value="8"/>&nbsp;Pinterest&emsp;
+              <input class="form-text" id="DG-4" type="radio" value="9"/>&nbsp;Tumblr&emsp;
+              <input class="form-text" id="DG-4" type="radio" value="10"/>&nbsp;WhatsApp&emsp;
+              <input class="form-text" id="DG-4" type="radio" value="11"/>&nbsp;ＷeChat&emsp;
+              <input class="form-text" id="DG-4" type="radio" value="12"/>&nbsp;Juiker&emsp;
+              <input class="form-text" id="DG-4" type="radio" value="13"/>&nbsp;Telegram&emsp;
+              <input class="form-text" id="DG-4" type="radio" value="14"/>&nbsp;不知道&emsp;
+              <input class="form-text" id="DG-4" type="radio" value="15"/>&nbsp;其他&emsp;
+              <div class="invalid-feedback" data-sb-feedback="name:required">
+                必填
+              </div>
+            </div>
+            <!-- DG-5 input-->
+            <div class="mb-5">
+              <h5><label for="DG-5"
+                >您曾在社群媒體（如Facebook、LINE、Instagram等）上進行哪些事情？（複選）</label
+              ></h5><br />
+              <input class="form-text" id="DG-5" type="checkbox" value="0"/>&nbsp;發表評論或分享我自己的影片或照片&emsp;
+              <input class="form-text" id="DG-5" type="checkbox" value="1"/>&nbsp;在別人分享的文章、影片或是照片上按讚&emsp;
+              <input class="form-text" id="DG-5" type="checkbox" value="2"/>&nbsp;瀏覽他人分享之文章、影片或是照片&emsp;
+              <input class="form-text" id="DG-5" type="checkbox" value="3"/>&nbsp;在私人討論群組留言&emsp;
+              <input class="form-text" id="DG-5" type="checkbox" value="4"/>&nbsp;打卡&emsp;
+              <input class="form-text" id="DG-5" type="checkbox" value="5"/>&nbsp;按讚留言以獲得獎品&emsp;
+              <input class="form-text" id="DG-5" type="checkbox" value="6"/>&nbsp;創造群組/張貼事件&emsp;
+              <input class="form-text" id="DG-5" type="checkbox" value="7"/>&nbsp;於公開群組張貼訊息或留言&emsp;
+              <input class="form-text" id="DG-5" type="checkbox" value="8"/>&nbsp;於其他公司或組織專頁留言抱怨&emsp;
+              <input class="form-text" id="DG-5" type="checkbox" value="9"/>&nbsp;收看網路直播&emsp;
+              <input class="form-text" id="DG-5" type="checkbox" value="10"/>&nbsp;開網路直播&emsp;
+              <input class="form-text" id="DG-5" type="checkbox" value="11"/>&nbsp;都沒有&emsp;
+              <input class="form-text" id="DG-5" type="checkbox" value="12"/>&nbsp;不知道&emsp;
+              <input class="form-text" id="DG-5" type="checkbox" value="13"/>&nbsp;其他&emsp;
+              <div class="invalid-feedback" data-sb-feedback="name:required">
+                必填
+              </div>
+            </div>
+            <!-- DG-6 input-->
+            <div class="mb-5">
+              <h5><label for="DG-6"
+                >請問您在決定購買產品或使用服務時，會不會先閱讀其他人在網路上撰寫或發表的相關評論？</label
+              ></h5><br />
+              <input class="form-text" id="DG-6" type="radio" value="0"/>&nbsp;會&emsp;
+              <input class="form-text" id="DG-6" type="radio" value="1"/>&nbsp;不會&emsp;
+              <div class="invalid-feedback" data-sb-feedback="name:required">
+                必填
+              </div>
+            </div>
+            <!-- DG-7 input-->
+            <div class="mb-5">
+            <h5><label for="DG-7"
+              >請問您在購買產品或使用服務後，會不會撰寫相關網路評論？</label
+            ></h5><br />
+            <input class="form-text" id="DG-7" type="radio" value="0"/>&nbsp;會&emsp;
+            <input class="form-text" id="DG-7" type="radio" value="1"/>&nbsp;不會&emsp;
+            <div class="invalid-feedback" data-sb-feedback="name:required">
+              必填
+            </div>
+          </div>
+            
               <div class="text-center mb-5">
                 <a class="btn btn-secondary btn-sm" onclick="saveName()"
-                  >下一頁</a
+                  >提交</a
                 >
               </div>
             </form>

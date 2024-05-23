@@ -6162,6 +6162,12 @@ fieldset:disabled .btn {
   background-size: 100% 100%;
 }
 
+.option {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
 /* rtl:options: {
   "autoRename": true,
   "stringMap":[ {
