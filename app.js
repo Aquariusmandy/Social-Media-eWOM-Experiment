@@ -4,6 +4,7 @@ const ejs = require("ejs");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const consentForm = require("./models/consentName");
+const friendForm = require("./models/friendForm");
 const { ObjectId } = require("bson");
 
 app.use(express.static("public")); // 將 'public' 文件夾設為靜態文件夾
@@ -46,24 +47,39 @@ mongoose
 // app.use(bodyParser.json());
 
 // 定義提交問卷
-app.get("/consent", async (req, res) => {
-  console.log(req.query);
-  let { name } = req.query;
-  res.render("form_part1_StrongTie.ejs");
-  //   try {
-  //     const surveyData = new ConsentForm(req.body);
-  //     await surveyData.save();
-  //     res.status(200).send("問卷提交成功！");
-  //   } catch (error) {
-  //     res.status(500).send("提交失敗失敗，請稍後再試。");
-  //     console.log(error);
-  //     console.log(surveyData);
-  //   }
-});
 
-// 提交好友姓名
-app.get("/friends", async (req, res) => {
-  console.log(req.query);
+// 提交好友姓名顯示在下一頁
+// app.get("/friends", async (req, res) => {
+//   console.log(req.query);
+//   let {
+//     friendname1,
+//     friendname2,
+//     friendname3,
+//     friendname4,
+//     friendname5,
+//     STS1,
+//     STS2,
+//     STS3,
+//     STS4,
+//     STS5,
+//   } = req.query;
+//   console.log(friendname1);
+//   res.render("temp.ejs", {
+//     friendname1,
+//     friendname2,
+//     friendname3,
+//     friendname4,
+//     friendname5,
+//     STS1,
+//     STS2,
+//     STS3,
+//     STS4,
+//     STS5,
+//   });
+// });
+
+app.post("/friends", async (req, res) => {
+  console.log(req.body);
   let {
     friendname1,
     friendname2,
@@ -75,20 +91,40 @@ app.get("/friends", async (req, res) => {
     STS3,
     STS4,
     STS5,
-  } = req.query;
-  console.log(friendname1);
-  res.render("temp.ejs", {
-    friendname1,
-    friendname2,
-    friendname3,
-    friendname4,
-    friendname5,
-    STS1,
-    STS2,
-    STS3,
-    STS4,
-    STS5,
+  } = req.body;
+  let newFriend = new friendForm({
+    name1: friendname1,
+    name2: friendname2,
+    name3: friendname3,
+    name4: friendname4,
+    name5: friendname5,
+    STS1: STS1,
+    STS2: STS2,
+    STS3: STS3,
+    STS4: STS4,
+    STS5: STS5,
   });
+  newFriend
+    .save()
+    .then(() => {
+      console.log("accepted friend form");
+      res.render("form_part2_AutTran.ejs", {
+        friendname1,
+        friendname2,
+        friendname3,
+        friendname4,
+        friendname5,
+        STS1,
+        STS2,
+        STS3,
+        STS4,
+        STS5,
+      });
+    })
+    .catch((e) => {
+      console.log("friend form failed");
+      console.log(e);
+    });
 });
 
 // 以下是前端顯示
@@ -104,8 +140,8 @@ app.get("/start", (req, res) => {
 app.post("/start", async (req, res) => {
   console.log(req.body);
   let { name } = req.body;
-  let id = 0;
-  let group = 8;
+  var id = Math.floor(Math.random() * 10000);
+  var group = Math.floor(Math.random() * 12) % 8;
   let newSubject = new consentForm({
     name: name,
     ID: id,
@@ -121,16 +157,6 @@ app.post("/start", async (req, res) => {
       console.log("failed");
       console.log(e);
     });
-
-  //   try {
-  //     const surveyData = new ConsentForm(req.body);
-  //     await surveyData.save();
-  //     res.status(200).send("問卷提交成功！");
-  //   } catch (error) {
-  //     res.status(500).send("提交失敗失敗，請稍後再試。");
-  //     console.log(error);
-  //     console.log(surveyData);
-  //   }
 });
 
 app.get("/", (req, res) => {
