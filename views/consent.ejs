@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="cn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>社群媒體評論研究</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap Icons-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- Google fonts-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- SimpleLightbox plugin CSS-->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css"
+      rel="stylesheet"
+    />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="masthead">
+      <div class="container px-4 px-lg-5 h-100">
+        <div
+          class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center"
+        >
+          <div class="col-lg-7 align-self-end">
+            <h3 class="text-black font-weight-bold">問卷調查參與同意書</h3>
+            <hr class="divider" />
+          </div>
+          <div class="col-lg-7 align-self-baseline">
+            <p class="text-black-50 mb-5 text-start">
+              <strong>問卷調查流程：</strong><br />
+              請根據問卷中的概要提示填寫問卷，問卷內容共有<strong>5篇</strong>社群媒體上的評論，每篇評論共有<strong>5道簡短問題</strong>。評論的內容包含餐飲、旅遊、影音，問卷題目中需要您表示對於這些評論以及其撰寫者的評價。您在問卷填答過程中若有任何疑慮可以隨時終止填答。問卷填答過程或是填答結束後有任何問題歡迎隨時聯繫研究人員。
+            </p>
+            <p class="text-black-50 mb-5 text-start">
+              <strong>費用、獲益： </strong><br />
+              本研究不會向您收取任何費用，亦不會有任何獲益。
+            </p>
+            <p class="text-black-50 mb-5 text-start">
+              <strong>隱私： </strong><br />
+              本研究結果可能會在學術期刊/書籍上發表，資料結果將以集體數據方式呈現，確保第三方不會根據研究資料辨識出您的身份。您所填寫之任何資料絕對保密，絕對不會將您的個人資料販售或是洩漏予第三方，亦不會移作任何商業使用，以保護您個人隱私。
+            </p>
+            <p class="text-black-50 mb-5 text-start">
+              <strong>傷害聲明： </strong><br />
+              填寫此問卷不會損害您的身體及心理健康，請安心填答。
+            </p>
+            <p class="text-black-50 mb-5 text-start">
+              <strong>問卷填答者同意聲明： </strong><br />
+              我聲明我已經被告知本研究的研究目的、流程、潛在獲益及費用、隱私相關說明。我所有問題都已得到滿意的答案，我已經詳細閱讀了本問卷調查同意書，下面的簽名表明我願意參加本研究。
+            </p>
+            <p class="text-black-50 mb-4 text-start">
+              <strong>＊請先簽署本研究參與同意書，再進行問卷填寫。</strong>
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <!-- FORM STRAT -->
+            <form
+              action="/start"
+              method="post"
+              id="consentForm"
+              data-sb-form-api-token="API_TOKEN"
+            >
+              <!-- Name input-->
+              <div class="form-floating mb-3">
+                <input
+                  class="form-control"
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="Enter your name..."
+                  data-sb-validations="required"
+                  required
+                />
+                <label for="name">同意聲明（請輸入完整中文姓名）</label>
+                <div class="invalid-feedback" data-sb-feedback="name:required">
+                  A name is required.
+                </div>
+              </div>
+              <button class="btn btn-secondary btn-sm mb-5" type="submit">
+                下一頁
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- SimpleLightbox plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="../js/scripts.js"></script>
+    <script src="app.js"></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+  </body>
+</html>

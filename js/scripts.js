@@ -56,6 +56,51 @@ window.addEventListener("DOMContentLoaded", (event) => {
 });
 
 // myself edit
+
+// //填完第一頁的同意書，要產生受測者ID以及後續要分配組別的 Group（1-8）
+// function consentName() {
+//   var consentName = document.getElementById("name");
+//   var rowData = {
+//     ConsentName: consentName.value,
+//   };
+//   //上傳資料
+//   google.script.run.addData(rowData);
+//   //清除資料
+//   document.getElementById("consentForm").reset();
+//   //DebugMessage
+//   alert("DebugMessage: Function Works!");
+
+//   // 導航到第二頁
+//   window.location.href = "../form/form_part1_StrongTie.html";
+// }
+
+document
+  .getElementById("consentForm")
+  .addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch("/consent", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      if (response.ok) {
+        alert("問卷提交成功！");
+      } else {
+        alert(`${JSON.stringify(data)} 提交失敗，請稍後再試。`);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Error 提交失敗，請稍後再試。");
+    }
+  });
+
 function saveName() {
   // 獲取使用者輸入的姓名
   var friendName1 = document.getElementById("friendname-1").value;
