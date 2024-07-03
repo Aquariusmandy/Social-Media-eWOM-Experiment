@@ -2,6 +2,14 @@ const mongoose = require("mongoose");
 
 //define a schema
 const friendSchema = new mongoose.Schema({
+  ID: {
+    type: Number,
+    default: 0,
+  },
+  Group: {
+    type: Number,
+    default: 8,
+  },
   name1: {
     type: String,
     require: true,

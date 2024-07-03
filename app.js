@@ -5,6 +5,8 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const consentForm = require("./models/consentName");
 const friendForm = require("./models/friendForm");
+const mainForm = require("./models/mainForm");
+const demographicForm = require("./models/DemographicForm");
 const { ObjectId } = require("bson");
 
 app.use(express.static("public")); // 將 'public' 文件夾設為靜態文件夾
@@ -27,56 +29,159 @@ mongoose
     console.log(err);
   });
 
-// // create an object
-// const Test00 = new ConsentForm({
-//   name: "Mandy",
-//   ID: 0,
-//   Group: 8,
-// });
-
-// // save to DB
-// Test00.save()
-//   .then(() => {
-//     console.log("Saved.");
-//   })
-//   .catch((err) => {
-//     console.log("error");
-//     console.log(err);
-//   });
+//Global variable
+var id = Math.floor(Math.random() * 10000);
+var group = Math.floor(Math.random() * 12) % 8;
 
 // app.use(bodyParser.json());
 
 // 定義提交問卷
 
-// 提交好友姓名顯示在下一頁
-// app.get("/friends", async (req, res) => {
-//   console.log(req.query);
-//   let {
-//     friendname1,
-//     friendname2,
-//     friendname3,
-//     friendname4,
-//     friendname5,
-//     STS1,
-//     STS2,
-//     STS3,
-//     STS4,
-//     STS5,
-//   } = req.query;
-//   console.log(friendname1);
-//   res.render("temp.ejs", {
-//     friendname1,
-//     friendname2,
-//     friendname3,
-//     friendname4,
-//     friendname5,
-//     STS1,
-//     STS2,
-//     STS3,
-//     STS4,
-//     STS5,
-//   });
-// });
+app.post("/demographic", async (req, res) => {
+  console.log(req.body);
+  let {
+    gender,
+    age,
+    education,
+    job,
+    location,
+    DG01,
+    DG02,
+    DG03,
+    DG04,
+    DG05,
+    DG06,
+    DG07,
+  } = req.body;
+  let newDemographic = new demographicForm({
+    ID: id,
+    Group: group,
+    gender: gender,
+    age: age,
+    education: education,
+    job: job,
+    location: location,
+    DG01: DG01,
+    DG02: DG02,
+    DG03: DG03,
+    DG04: DG04,
+    DG05: DG05,
+    DG06: DG06,
+    DG07: DG07,
+  });
+  newDemographic
+    .save()
+    .then(() => {
+      console.log("accepted Demo form");
+      res.render("thanks.ejs");
+    })
+    .catch((e) => {
+      console.log("friend form failed");
+      console.log(e);
+    });
+});
+
+app.get("/mainform", (req, res) => {
+  res.render("form_part3_Demographic.ejs");
+});
+
+app.post("/mainform", async (req, res) => {
+  console.log(req.body);
+  let {
+    MotExt1,
+    MotInt1,
+    Tran1,
+    Qua1,
+    Cre1,
+    MotExt2,
+    MotInt2,
+    Tran2,
+    Qua2,
+    Cre2,
+    MotExt3,
+    MotInt3,
+    Tran3,
+    Qua3,
+    Cre3,
+    MotExt4,
+    MotInt4,
+    Tran4,
+    Qua4,
+    Cre4,
+    MotExt5,
+    MotInt5,
+    Tran5,
+    Qua5,
+    Cre5,
+    Quality1,
+    Quality2,
+    Quality3,
+    Quality4,
+    Quality5,
+    Credibility1,
+    Credibility2,
+    Credibility3,
+    Credibility4,
+    Credibility5,
+    Credibility6,
+    Credibility7,
+  } = req.body;
+  let newMain = new mainForm({
+    ID: id,
+    Group: group,
+    MotExt1: MotExt1,
+    MotInt1: MotInt1,
+    Tran1: Tran1,
+    Qua1: Qua1,
+    Cre1: Cre1,
+    MotExt2: MotExt2,
+    MotInt2: MotInt2,
+    Tran2: Tran2,
+    Qua2: Qua2,
+    Cre2: Cre2,
+    MotExt3: MotExt3,
+    MotInt3: MotInt3,
+    Tran3: Tran3,
+    Qua3: Qua3,
+    Cre3: Cre3,
+    MotExt4: MotExt4,
+    MotInt4: MotInt4,
+    Tran4: Tran4,
+    Qua4: Qua4,
+    Cre4: Cre4,
+    MotExt5: MotExt5,
+    MotInt5: MotInt5,
+    Tran5: Tran5,
+    Qua5: Qua5,
+    Cre5: Cre5,
+    Quality1: Quality1,
+    Quality2: Quality2,
+    Quality3: Quality3,
+    Quality4: Quality4,
+    Quality5: Quality5,
+    Credibility1: Credibility1,
+    Credibility2: Credibility2,
+    Credibility3: Credibility3,
+    Credibility4: Credibility4,
+    Credibility5: Credibility5,
+    Credibility6: Credibility6,
+    Credibility7: Credibility7,
+  });
+  newMain
+    .save()
+    .then(() => {
+      console.log("accepted main form");
+      res.render("form_part3_Demographic.ejs");
+    })
+    .catch((e) => {
+      console.log("main form failed");
+      console.log(e);
+    });
+});
+
+app.get("/intrinsicT", (req, res) => {
+  res.render("form_part2_AutTran.ejs");
+});
 
 app.post("/friends", async (req, res) => {
   console.log(req.body);
@@ -93,6 +198,8 @@ app.post("/friends", async (req, res) => {
     STS5,
   } = req.body;
   let newFriend = new friendForm({
+    ID: id,
+    Group: group,
     name1: friendname1,
     name2: friendname2,
     name3: friendname3,
@@ -140,8 +247,6 @@ app.get("/start", (req, res) => {
 app.post("/start", async (req, res) => {
   console.log(req.body);
   let { name } = req.body;
-  var id = Math.floor(Math.random() * 10000);
-  var group = Math.floor(Math.random() * 12) % 8;
   let newSubject = new consentForm({
     name: name,
     ID: id,
