@@ -82,16 +82,22 @@
             <form action="friends" method="post" id="friendForm" data-sb-form-api-token="API_TOKEN">
               <!-- Name1 input-->
               <div class="mb-3">
-                <label class="mb-3" for="friendname1"
+                <div style="display:flex;flex-direction: row;">
+                  <label class="mb-3" for="friendname1"
                   >第一位好友（例：李Ｏ涵、**ndy *i）</label
-                ><br />
+                >
+                  <p style="color: brown;">*</p><br/>
+                </div>
+                
                 <input
                   class="form-control"
                   id="friendname1"
                   name="friendname1"
                   type="text"
                   placeholder="請輸入好友姓名"
+                  required
                   data-sb-validations="required"
+                  
                 />
                 <div class="invalid-feedback" data-sb-feedback="name:required">
                   A name is required.
@@ -99,15 +105,20 @@
               </div>
               <!-- Name2 input-->
               <div class="mb-3">
-                <label class="mb-3" for="friendname2"
+                <div style="display:flex;flex-direction: row;">
+                  <label class="mb-3" for="friendname2"
                   >第二位好友（例：李Ｏ涵、**ndy *i）</label
-                ><br />
+                >
+                  <p style="color: brown;">*</p><br/>
+                </div>
+                
                 <input
                   class="form-control"
                   id="friendname2"
                   name="friendname2"
                   type="text"
                   placeholder="請輸入好友姓名"
+                  required
                   data-sb-validations="required"
                 />
                 <div class="invalid-feedback" data-sb-feedback="name:required">
@@ -116,15 +127,20 @@
               </div>
               <!-- Name3 input-->
               <div class="mb-3">
-                <label class="mb-3" for="friendname3"
+                <div style="display:flex;flex-direction: row;">
+                  <label class="mb-3" for="friendname3"
                   >第三位好友（例：李Ｏ涵、**ndy *i）</label
-                ><br />
+                >
+                  <p style="color: brown;">*</p><br/>
+                </div>
+                
                 <input
                   class="form-control"
                   id="friendname3"
                   name="friendname3"
                   type="text"
                   placeholder="請輸入好友姓名"
+                  required
                   data-sb-validations="required"
                 />
                 <div class="invalid-feedback" data-sb-feedback="name:required">
@@ -133,15 +149,19 @@
               </div>
               <!-- Name4 input-->
               <div class="mb-3">
-                <label class="mb-3" for="friendname4"
+                <div style="display:flex;flex-direction: row;">
+                  <label class="mb-3" for="friendname4"
                   >第四位好友（例：李Ｏ涵、**ndy *i）</label
-                ><br />
+                >
+                  <p style="color: brown;">*</p><br/>
+                </div>
                 <input
                   class="form-control"
                   id="friendname4"
                   name="friendname4"
                   type="text"
                   placeholder="請輸入好友姓名"
+                  required
                   data-sb-validations="required"
                 />
                 <div class="invalid-feedback" data-sb-feedback="name:required">
@@ -150,15 +170,19 @@
               </div>
               <!-- Name5 input-->
               <div class="mb-5">
-                <label class="mb-3" for="friendname5"
+                <div style="display:flex;flex-direction: row;">
+                  <label class="mb-3" for="friendname4"
                   >第五位好友（例：李Ｏ涵、**ndy *i）</label
-                ><br />
+                >
+                  <p style="color: brown;">*</p><br/>
+                </div>
                 <input
                   class="form-control"
                   id="friendname5"
                   name="friendname5"
                   type="text"
                   placeholder="請輸入好友姓名"
+                  required
                   data-sb-validations="required"
                 />
                 <div class="invalid-feedback" data-sb-feedback="name:required">
@@ -166,68 +190,71 @@
                 </div>
               </div>
               <div class="mb-5">
-                <h5 class="mb-3">請問您認為您與這五位好友的親近程度為何？（1分-非常不熟 7分-非常熟識）</h5>
+                <div style="display:flex;flex-direction: row;">
+                    <h5 class="mb-3">請問您認為您與這五位好友的親近程度為何？（1分-非常不熟 7分-非常熟識）</h5>
+                    <p style="color: brown;">*</p><br>
+                </div>
                 <table class="mb-4">
                   <tr>
-                      <th style="width: 23%;" ></th>
-                      <th style="width: 11%; text-align: center;"></th>
-                      <th style="width: 11%; text-align: center;"></th>
-                      <th style="width: 11%; text-align: center;"></th>
-                      <th style="width: 11%; text-align: center;"></th>
-                      <th style="width: 11%; text-align: center;"></th>
-                      <th style="width: 11%; text-align: center;"></th>
-                      <th style="width: 11%; text-align: center;"></th>
+                      <th style="width: 30%;" ></th>
+                      <th style="width: 10%; text-align: center;"></th>
+                      <th style="width: 10%; text-align: center;"></th>
+                      <th style="width: 10%; text-align: center;"></th>
+                      <th style="width: 10%; text-align: center;"></th>
+                      <th style="width: 10%; text-align: center;"></th>
+                      <th style="width: 10%; text-align: center;"></th>
+                      <th style="width: 10%; text-align: center;"></th>
                   </tr>
                   <tr>
                       <td class="">第一位好友&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</td>
-                      <td style=" text-align: center;"><input type="radio" name="STS1" value="1">&nbsp;1</td>
-                      <td style=" text-align: center;"><input type="radio" name="STS1" value="2">&nbsp;2</td>
-                      <td style=" text-align: center;"><input type="radio" name="STS1" value="3">&nbsp;3</td>
-                      <td style=" text-align: center;"><input type="radio" name="STS1" value="4">&nbsp;4</td>
-                      <td style=" text-align: center;"><input type="radio" name="STS1" value="5">&nbsp;5</td>
-                      <td style=" text-align: center;"><input type="radio" name="STS1" value="6">&nbsp;6</td>
-                      <td style=" text-align: center;"><input type="radio" name="STS1" value="7">&nbsp;7</td>
+                      <td style=" text-align: center;"><input type="radio" name="STS1" value="1" required>&nbsp;1</td>
+                      <td style=" text-align: center;"><input type="radio" name="STS1" value="2" required>&nbsp;2</td>
+                      <td style=" text-align: center;"><input type="radio" name="STS1" value="3" required>&nbsp;3</td>
+                      <td style=" text-align: center;"><input type="radio" name="STS1" value="4" required>&nbsp;4</td>
+                      <td style=" text-align: center;"><input type="radio" name="STS1" value="5" required>&nbsp;5</td>
+                      <td style=" text-align: center;"><input type="radio" name="STS1" value="6" required>&nbsp;6</td>
+                      <td style=" text-align: center;"><input type="radio" name="STS1" value="7" required>&nbsp;7</td>
                   </tr>
                   <tr>
                     <td >第二位好友&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</td>
-                    <td style=" text-align: center;"><input type="radio" name="STS2" value="1">&nbsp;1</td>
-                    <td style=" text-align: center;"><input type="radio" name="STS2" value="2">&nbsp;2</td>
-                    <td style=" text-align: center;"><input type="radio" name="STS2" value="3">&nbsp;3</td>
-                    <td style=" text-align: center;"><input type="radio" name="STS2" value="4">&nbsp;4</td>
-                    <td style=" text-align: center;"><input type="radio" name="STS2" value="5">&nbsp;5</td>
-                    <td style=" text-align: center;"><input type="radio" name="STS2" value="6">&nbsp;6</td>
-                    <td style=" text-align: center;"><input type="radio" name="STS2" value="7">&nbsp;7</td>
+                    <td style=" text-align: center;"><input type="radio" name="STS2" value="1" required>&nbsp;1</td>
+                    <td style=" text-align: center;"><input type="radio" name="STS2" value="2" required>&nbsp;2</td>
+                    <td style=" text-align: center;"><input type="radio" name="STS2" value="3" required>&nbsp;3</td>
+                    <td style=" text-align: center;"><input type="radio" name="STS2" value="4" required>&nbsp;4</td>
+                    <td style=" text-align: center;"><input type="radio" name="STS2" value="5" required>&nbsp;5</td>
+                    <td style=" text-align: center;"><input type="radio" name="STS2" value="6" required>&nbsp;6</td>
+                    <td style=" text-align: center;"><input type="radio" name="STS2" value="7" required>&nbsp;7</td>
                 </tr>
                 <tr></tr>
                 <tr>
                   <td>第三位好友&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</td>
-                  <td style=" text-align: center;"><input type="radio" name="STS3" value="1">&nbsp;1</td>
-                  <td style=" text-align: center;"><input type="radio" name="STS3" value="2">&nbsp;2</td>
-                  <td style=" text-align: center;"><input type="radio" name="STS3" value="3">&nbsp;3</td>
-                  <td style=" text-align: center;"><input type="radio" name="STS3" value="4">&nbsp;4</td>
-                  <td style=" text-align: center;"><input type="radio" name="STS3" value="5">&nbsp;5</td>
-                  <td style=" text-align: center;"><input type="radio" name="STS3" value="6">&nbsp;6</td>
-                  <td style=" text-align: center;"><input type="radio" name="STS3" value="7">&nbsp;7</td>
+                  <td style=" text-align: center;"><input type="radio" name="STS3" value="1" required>&nbsp;1</td>
+                  <td style=" text-align: center;"><input type="radio" name="STS3" value="2" required>&nbsp;2</td>
+                  <td style=" text-align: center;"><input type="radio" name="STS3" value="3" required>&nbsp;3</td>
+                  <td style=" text-align: center;"><input type="radio" name="STS3" value="4" required>&nbsp;4</td>
+                  <td style=" text-align: center;"><input type="radio" name="STS3" value="5" required>&nbsp;5</td>
+                  <td style=" text-align: center;"><input type="radio" name="STS3" value="6" required>&nbsp;6</td>
+                  <td style=" text-align: center;"><input type="radio" name="STS3" value="7" required>&nbsp;7</td>
               </tr>
               <tr>
                 <td>第四位好友&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</td>
-                <td style=" text-align: center;"><input type="radio" name="STS4" value="1">&nbsp;1</td>
-                <td style=" text-align: center;"><input type="radio" name="STS4" value="2">&nbsp;2</td>
-                <td style=" text-align: center;"><input type="radio" name="STS4" value="3">&nbsp;3</td>
-                <td style=" text-align: center;"><input type="radio" name="STS4" value="4">&nbsp;4</td>
-                <td style=" text-align: center;"><input type="radio" name="STS4" value="5">&nbsp;5</td>
-                <td style=" text-align: center;"><input type="radio" name="STS4" value="6">&nbsp;6</td>
-                <td style=" text-align: center;"><input type="radio" name="STS4" value="7">&nbsp;7</td>
+                <td style=" text-align: center;"><input type="radio" name="STS4" value="1" required>&nbsp;1</td>
+                <td style=" text-align: center;"><input type="radio" name="STS4" value="2" required>&nbsp;2</td>
+                <td style=" text-align: center;"><input type="radio" name="STS4" value="3" required>&nbsp;3</td>
+                <td style=" text-align: center;"><input type="radio" name="STS4" value="4" required>&nbsp;4</td>
+                <td style=" text-align: center;"><input type="radio" name="STS4" value="5" required>&nbsp;5</td>
+                <td style=" text-align: center;"><input type="radio" name="STS4" value="6" required>&nbsp;6</td>
+                <td style=" text-align: center;"><input type="radio" name="STS4" value="7" required>&nbsp;7</td>
             </tr>
             <tr>
               <td>第五位好友&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</td>
-              <td style=" text-align: center;"><input type="radio" name="STS5" value="1">&nbsp;1</td>
-              <td style=" text-align: center;"><input type="radio" name="STS5" value="2">&nbsp;2</td>
-              <td style=" text-align: center;"><input type="radio" name="STS5" value="3">&nbsp;3</td>
-              <td style=" text-align: center;"><input type="radio" name="STS5" value="4">&nbsp;4</td>
-              <td style=" text-align: center;"><input type="radio" name="STS5" value="5">&nbsp;5</td>
-              <td style=" text-align: center;"><input type="radio" name="STS5" value="6">&nbsp;6</td>
-              <td style=" text-align: center;"><input type="radio" name="STS5" value="7">&nbsp;7</td>
+              <td style=" text-align: center;"><input type="radio" name="STS5" value="1" required>&nbsp;1</td>
+              <td style=" text-align: center;"><input type="radio" name="STS5" value="2" required>&nbsp;2</td>
+              <td style=" text-align: center;"><input type="radio" name="STS5" value="3" required>&nbsp;3</td>
+              <td style=" text-align: center;"><input type="radio" name="STS5" value="4" required>&nbsp;4</td>
+              <td style=" text-align: center;"><input type="radio" name="STS5" value="5" required>&nbsp;5</td>
+              <td style=" text-align: center;"><input type="radio" name="STS5" value="6" required>&nbsp;6</td>
+              <td style=" text-align: center;"><input type="radio" name="STS5" value="7" required>&nbsp;7</td>
           </tr>
                 </table>
 

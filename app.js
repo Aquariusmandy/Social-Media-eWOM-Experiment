@@ -33,6 +33,8 @@ mongoose
 var id = Math.floor(Math.random() * 10000);
 var group = Math.floor(Math.random() * 12) % 8;
 
+// var group = 0;
+
 // app.use(bodyParser.json());
 
 // 定義提交問卷
@@ -215,18 +217,59 @@ app.post("/friends", async (req, res) => {
     .save()
     .then(() => {
       console.log("accepted friend form");
-      res.render("form_part2_AutTran.ejs", {
-        friendname1,
-        friendname2,
-        friendname3,
-        friendname4,
-        friendname5,
-        STS1,
-        STS2,
-        STS3,
-        STS4,
-        STS5,
-      });
+      if (group == 0 || group == 4) {
+        res.render("form_part2_AutTran.ejs", {
+          friendname1,
+          friendname2,
+          friendname3,
+          friendname4,
+          friendname5,
+          STS1,
+          STS2,
+          STS3,
+          STS4,
+          STS5,
+        });
+      } else if (group == 1 || group == 5) {
+        res.render("form_part2_AutNoTran.ejs", {
+          friendname1,
+          friendname2,
+          friendname3,
+          friendname4,
+          friendname5,
+          STS1,
+          STS2,
+          STS3,
+          STS4,
+          STS5,
+        });
+      } else if (group == 2 || group == 6) {
+        res.render("form_part2_ExtTran.ejs", {
+          friendname1,
+          friendname2,
+          friendname3,
+          friendname4,
+          friendname5,
+          STS1,
+          STS2,
+          STS3,
+          STS4,
+          STS5,
+        });
+      } else {
+        res.render("form_part2_ExtNoTran.ejs", {
+          friendname1,
+          friendname2,
+          friendname3,
+          friendname4,
+          friendname5,
+          STS1,
+          STS2,
+          STS3,
+          STS4,
+          STS5,
+        });
+      }
     })
     .catch((e) => {
       console.log("friend form failed");
@@ -235,7 +278,7 @@ app.post("/friends", async (req, res) => {
 });
 
 // 以下是前端顯示
-
+// 這個 route 沒用到
 app.get("/strongtie", (req, res) => {
   res.render("form_part1_StrongTie.ejs");
 });
@@ -256,7 +299,11 @@ app.post("/start", async (req, res) => {
     .save()
     .then(() => {
       console.log("accepted");
-      res.render("form_part1_StrongTie.ejs");
+      if (group < 4) {
+        res.render("form_part1_StrongTie.ejs");
+      } else {
+        res.render("form_part1_WeakTie.ejs");
+      }
     })
     .catch((e) => {
       console.log("failed");
