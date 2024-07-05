@@ -13,6 +13,8 @@ app.use(express.static("public")); // 將 'public' 文件夾設為靜態文件�
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 
+const port = process.env.PORT || 5501;
+
 // connect to mongoDB
 db_url =
   "mongodb+srv://aquariusmandy1122:ok7TWaQZN3xExhPO@cluster0.ud6ryv5.mongodb.net/?retryWrites=true&w=majority";
@@ -315,6 +317,6 @@ app.get("/", (req, res) => {
   res.render("index.ejs");
 });
 
-app.listen(5501, () => {
-  console.log("Server is running on port 5501.");
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
