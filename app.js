@@ -13,7 +13,7 @@ app.use(express.static("public")); // 將 'public' 文件夾設為靜態文件�
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 
-const port = process.env.PORT || 5501;
+const port = process.env.PORT || 10000;
 
 // connect to mongoDB
 db_url =
