@@ -16,8 +16,6 @@ app.set("view engine", "ejs");
 const port = process.env.PORT || 10000;
 
 // connect to mongoDB
-// db_url =
-//   "mongodb+srv://aquariusmandy1122:ok7TWaQZN3xExhPO@cluster0.ud6ryv5.mongodb.net/?retryWrites=true&w=majority";
 db_url = process.env.DB_URL;
 mongoose
   .connect(db_url, {
@@ -44,6 +42,8 @@ var group = Math.floor(Math.random() * 12) % 8;
 
 app.post("/demographic", async (req, res) => {
   console.log(req.body);
+  const endTime = Date.now();
+  const timeSpan = Math.floor((endTime - startTime) / 1000);
   let {
     gender,
     age,
@@ -73,6 +73,9 @@ app.post("/demographic", async (req, res) => {
     DG05: DG05,
     DG06: DG06,
     DG07: DG07,
+    startTime: startTime,
+    endTime: endTime,
+    timeSpan: timeSpan,
   });
   newDemographic
     .save()
@@ -176,7 +179,11 @@ app.post("/mainform", async (req, res) => {
     .save()
     .then(() => {
       console.log("accepted main form");
-      res.render("form_part3_Demographic.ejs");
+      res.render("form_part3_Demographic.ejs", {
+        id,
+        group,
+        startTime,
+      });
     })
     .catch((e) => {
       console.log("main form failed");
@@ -227,11 +234,9 @@ app.post("/friends", async (req, res) => {
           friendname3,
           friendname4,
           friendname5,
-          STS1,
-          STS2,
-          STS3,
-          STS4,
-          STS5,
+          id,
+          group,
+          startTime,
         });
       } else if (group == 1 || group == 5) {
         res.render("form_part2_AutNoTran.ejs", {
@@ -240,11 +245,9 @@ app.post("/friends", async (req, res) => {
           friendname3,
           friendname4,
           friendname5,
-          STS1,
-          STS2,
-          STS3,
-          STS4,
-          STS5,
+          id,
+          group,
+          startTime,
         });
       } else if (group == 2 || group == 6) {
         res.render("form_part2_ExtTran.ejs", {
@@ -253,11 +256,9 @@ app.post("/friends", async (req, res) => {
           friendname3,
           friendname4,
           friendname5,
-          STS1,
-          STS2,
-          STS3,
-          STS4,
-          STS5,
+          id,
+          group,
+          startTime,
         });
       } else {
         res.render("form_part2_ExtNoTran.ejs", {
@@ -266,11 +267,9 @@ app.post("/friends", async (req, res) => {
           friendname3,
           friendname4,
           friendname5,
-          STS1,
-          STS2,
-          STS3,
-          STS4,
-          STS5,
+          id,
+          group,
+          startTime,
         });
       }
     })
@@ -302,10 +301,19 @@ app.post("/start", async (req, res) => {
     .save()
     .then(() => {
       console.log("accepted");
+      const startTime = Date.now();
       if (group < 4) {
-        res.render("form_part1_StrongTie.ejs");
+        res.render("form_part1_StrongTie.ejs", {
+          id,
+          group,
+          startTime,
+        });
       } else {
-        res.render("form_part1_WeakTie.ejs");
+        res.render("form_part1_WeakTie.ejs", {
+          id,
+          group,
+          startTime,
+        });
       }
     })
     .catch((e) => {

@@ -58,6 +58,15 @@ const demographicSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
+  startTime: {
+    type: Date,
+  },
+  endTime: {
+    type: Date,
+  },
+  timeSpan: {
+    type: Number,
+  },
 });
 // create a model for consents
 const demographicForm = mongoose.model("Demographic", demographicSchema);
