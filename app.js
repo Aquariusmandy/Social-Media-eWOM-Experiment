@@ -33,6 +33,7 @@ mongoose
 //Global variable
 var id = Math.floor(Math.random() * 10000);
 var group = Math.floor(Math.random() * 12) % 8;
+var startTime = Date.now();
 
 // var group = 0;
 
@@ -41,9 +42,12 @@ var group = Math.floor(Math.random() * 12) % 8;
 // 定義提交問卷
 
 app.post("/demographic", async (req, res) => {
-  console.log(req.body);
   const endTime = Date.now();
   const timeSpan = Math.floor((endTime - startTime) / 1000);
+  console.log(req.body);
+  console.log(`start time: ${startTime}`);
+  console.log(`end time: ${endTime}`);
+  console.log(`time span: ${timeSpan}`);
   let {
     gender,
     age,
@@ -179,11 +183,7 @@ app.post("/mainform", async (req, res) => {
     .save()
     .then(() => {
       console.log("accepted main form");
-      res.render("form_part3_Demographic.ejs", {
-        id,
-        group,
-        startTime,
-      });
+      res.render("form_part3_Demographic.ejs", {});
     })
     .catch((e) => {
       console.log("main form failed");
@@ -234,9 +234,6 @@ app.post("/friends", async (req, res) => {
           friendname3,
           friendname4,
           friendname5,
-          id,
-          group,
-          startTime,
         });
       } else if (group == 1 || group == 5) {
         res.render("form_part2_AutNoTran.ejs", {
@@ -245,9 +242,6 @@ app.post("/friends", async (req, res) => {
           friendname3,
           friendname4,
           friendname5,
-          id,
-          group,
-          startTime,
         });
       } else if (group == 2 || group == 6) {
         res.render("form_part2_ExtTran.ejs", {
@@ -256,9 +250,6 @@ app.post("/friends", async (req, res) => {
           friendname3,
           friendname4,
           friendname5,
-          id,
-          group,
-          startTime,
         });
       } else {
         res.render("form_part2_ExtNoTran.ejs", {
@@ -267,9 +258,6 @@ app.post("/friends", async (req, res) => {
           friendname3,
           friendname4,
           friendname5,
-          id,
-          group,
-          startTime,
         });
       }
     })
@@ -290,7 +278,7 @@ app.get("/start", (req, res) => {
 });
 
 app.post("/start", async (req, res) => {
-  console.log(req.body);
+  console.log(req.body, startTime);
   let { name } = req.body;
   let newSubject = new consentForm({
     name: name,
@@ -301,19 +289,10 @@ app.post("/start", async (req, res) => {
     .save()
     .then(() => {
       console.log("accepted");
-      const startTime = Date.now();
       if (group < 4) {
-        res.render("form_part1_StrongTie.ejs", {
-          id,
-          group,
-          startTime,
-        });
+        res.render("form_part1_StrongTie.ejs", {});
       } else {
-        res.render("form_part1_WeakTie.ejs", {
-          id,
-          group,
-          startTime,
-        });
+        res.render("form_part1_WeakTie.ejs", {});
       }
     })
     .catch((e) => {
