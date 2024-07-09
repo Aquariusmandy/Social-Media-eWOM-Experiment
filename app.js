@@ -35,7 +35,7 @@ mongoose
 // var id = Math.floor(Math.random() * 10000);
 // var group = Math.floor(Math.random() * 12) % 8;
 var id = 999999;
-var group = 0;
+var group = 1;
 var startTime = Date.now();
 
 // var group = 0;
