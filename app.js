@@ -17,6 +17,7 @@ const port = process.env.PORT || 10000;
 
 // connect to mongoDB
 db_url = process.env.DB_URL;
+
 mongoose
   .connect(db_url, {
     useNewUrlParser: true,
@@ -31,8 +32,10 @@ mongoose
   });
 
 //Global variable
-var id = Math.floor(Math.random() * 10000);
-var group = Math.floor(Math.random() * 12) % 8;
+// var id = Math.floor(Math.random() * 10000);
+// var group = Math.floor(Math.random() * 12) % 8;
+var id = 999999;
+var group = 0;
 var startTime = Date.now();
 
 // var group = 0;
@@ -277,7 +280,7 @@ app.get("/start", (req, res) => {
   res.render("consent.ejs");
 });
 
-app.post("/start", async (req, res) => {
+app.post("/consents", async (req, res) => {
   console.log(req.body, startTime);
   let { name } = req.body;
   let newSubject = new consentForm({
