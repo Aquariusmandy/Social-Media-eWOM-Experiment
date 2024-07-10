@@ -1,4 +1,5 @@
 const express = require("express");
+const session = require("express-session");
 const app = express();
 const ejs = require("ejs");
 const mongoose = require("mongoose");
@@ -31,20 +32,28 @@ mongoose
     console.log(err);
   });
 
-//Global variable
-// var id = Math.floor(Math.random() * 10000);
-// var group = Math.floor(Math.random() * 12) % 8;
-var id = 999999;
-var group = 0;
-var startTime = Date.now();
+app.use(
+  session({
+    secret: "random",
+    resave: false,
+    saveUninitialzed: true,
+  })
+);
 
-// var group = 0;
-
-// app.use(bodyParser.json());
+//Define init data
+function initID() {
+  const id = Math.floor(Math.random() * 10000);
+  const group = id % 8;
+  const startTime = Date.now();
+  return [id, group, startTime];
+}
 
 // 定義提交問卷
 
 app.post("/demographic", async (req, res) => {
+  let id = req.session.userId;
+  let group = req.session.userGroup;
+  let startTime = req.session.userStart;
   const endTime = Date.now();
   const timeSpan = Math.floor((endTime - startTime) / 1000);
   console.log(req.body);
@@ -102,6 +111,8 @@ app.get("/mainform", (req, res) => {
 
 app.post("/mainform", async (req, res) => {
   console.log(req.body);
+  let id = req.session.userId;
+  let group = req.session.userGroup;
   let {
     MotExt1,
     MotInt1,
@@ -199,6 +210,8 @@ app.get("/intrinsicT", (req, res) => {
 });
 
 app.post("/friends", async (req, res) => {
+  let id = req.session.userId;
+  let group = req.session.userGroup;
   console.log(req.body);
   let {
     friendname1,
@@ -276,12 +289,25 @@ app.get("/strongtie", (req, res) => {
   res.render("form_part1_StrongTie.ejs");
 });
 
-app.get("/start", (req, res) => {
+app.get("/start", async (req, res) => {
+  const data = initID();
+  let user = {
+    id: data[0],
+    group: data[1],
+    startTime: data[2],
+  };
+  req.session.userId = data[0];
+  req.session.userGroup = data[1];
+  req.session.userStart = data[2];
+  let temp = req.session.userId;
+  console.log(temp);
   res.render("consent.ejs");
 });
 
 app.post("/consents", async (req, res) => {
-  console.log(req.body, startTime);
+  let id = req.session.userId;
+  let group = req.session.userGroup;
+  console.log(req.body, id);
   let { name } = req.body;
   let newSubject = new consentForm({
     name: name,
