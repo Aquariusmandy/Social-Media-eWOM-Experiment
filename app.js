@@ -17,9 +17,7 @@ app.set("view engine", "ejs");
 const port = process.env.PORT || 10000;
 
 // connect to mongoDB
-// db_url = process.env.DB_URL;
-db_url =
-  "mongodb+srv://aquariusmandy1122:ok7TWaQZN3xExhPO@cluster0.ud6ryv5.mongodb.net/";
+db_url = process.env.DB_URL;
 
 mongoose
   .connect(db_url, {
