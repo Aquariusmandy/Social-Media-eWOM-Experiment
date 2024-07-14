@@ -17,7 +17,9 @@ app.set("view engine", "ejs");
 const port = process.env.PORT || 10000;
 
 // connect to mongoDB
-db_url = process.env.DB_URL;
+// db_url = process.env.DB_URL;
+db_url =
+  "mongodb+srv://aquariusmandy1122:ok7TWaQZN3xExhPO@cluster0.ud6ryv5.mongodb.net/";
 
 mongoose
   .connect(db_url, {
@@ -73,6 +75,7 @@ app.post("/demographic", async (req, res) => {
     DG05,
     DG06,
     DG07,
+    email,
   } = req.body;
   let newDemographic = new demographicForm({
     ID: id,
@@ -89,6 +92,7 @@ app.post("/demographic", async (req, res) => {
     DG05: DG05,
     DG06: DG06,
     DG07: DG07,
+    email: email,
     startTime: startTime,
     endTime: endTime,
     timeSpan: timeSpan,

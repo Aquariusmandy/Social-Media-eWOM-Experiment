@@ -58,6 +58,9 @@ const demographicSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
+  email: {
+    type: String,
+  },
   startTime: {
     type: Date,
   },
