@@ -17,9 +17,7 @@ app.set("view engine", "ejs");
 const port = process.env.PORT || 10000;
 
 // connect to mongoDB
-// db_url = process.env.DB_URL;
-db_url =
-  "mongodb+srv://aquariusmandy1122:ok7TWaQZN3xExhPO@cluster0.ud6ryv5.mongodb.net/";
+db_url = process.env.DB_URL;
 
 mongoose
   .connect(db_url, {
@@ -44,10 +42,8 @@ app.use(
 
 //Define init data
 function initID() {
-  // const id = Math.floor(Math.random() * 10000);
-  // const group = id % 8;
-  const id = 999999;
-  const group = 0;
+  const id = Math.floor(Math.random() * 10000);
+  const group = id % 8;
   const startTime = Date.now();
   return [id, group, startTime];
 }
