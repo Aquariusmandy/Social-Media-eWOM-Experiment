@@ -42,8 +42,12 @@ app.use(
 
 //Define init data
 function initID() {
-  const id = Math.floor(Math.random() * 10000);
-  const group = id % 8;
+  var id = Math.floor(Math.random() * 10000);
+  var group = id % 8;
+  while (group == 3) {
+    var id = Math.floor(Math.random() * 10000);
+    var group = id % 8;
+  }
   const startTime = Date.now();
   return [id, group, startTime];
 }
