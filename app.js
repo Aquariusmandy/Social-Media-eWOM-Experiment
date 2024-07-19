@@ -57,7 +57,10 @@ function initID() {
 app.post("/demographic", async (req, res) => {
   let id = req.session.userId;
   let group = req.session.userGroup;
-  let startTime = req.session.userStart;
+  var startTime = req.session.userStart;
+  if (startTime == undefined) {
+    var startTime = Date.now();
+  }
   const endTime = Date.now();
   const timeSpan = Math.floor((endTime - startTime) / 1000);
   console.log(req.body);
@@ -106,7 +109,7 @@ app.post("/demographic", async (req, res) => {
       res.render("thanks.ejs");
     })
     .catch((e) => {
-      console.log("friend form failed");
+      console.log("demographic form failed");
       console.log(e);
     });
 });
