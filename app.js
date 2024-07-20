@@ -44,7 +44,7 @@ app.use(
 function initID() {
   var id = Math.floor(Math.random() * 10000);
   var group = id % 8;
-  while (group == 3) {
+  while (group == 0 || group == 1 || group == 3 || group ==5) {
     var id = Math.floor(Math.random() * 10000);
     var group = id % 8;
   }
